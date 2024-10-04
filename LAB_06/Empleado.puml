@@ -1,0 +1,27 @@
+@startuml
+abstract class Empleado {
+  - nombre: String
+  - salario: double
+  + Empleado(nombre: String, salario: double)
+  + calcularSalario(): double
+}
+
+class EmpleadoTiempoCompleto {
+  - horasTrabajadas: int
+  - tarifaPorHora: double
+  - bonoPorHorasExtras: double
+  + EmpleadoTiempoCompleto(nombre: String, salario: double, horasTrabajadas: int, tarifaPorHora: double, bonoPorHorasExtras: double)
+  + calcularSalario(): double
+}
+
+class EmpleadoPorComision {
+  - ventasTotales: double
+  - porcentajeComision: double
+  - bonoPorMeta: double
+  + EmpleadoPorComision(nombre: String, salario: double, ventasTotales: double, porcentajeComision: double, bonoPorMeta: double)
+  + calcularSalario(): double
+}
+
+Empleado <|-- EmpleadoTiempoCompleto
+Empleado <|-- EmpleadoPorComision
+@enduml

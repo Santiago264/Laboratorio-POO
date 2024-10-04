@@ -1,0 +1,41 @@
+@startuml
+interface FiguraGeometrica {
+  + calcularArea(): double
+  + calcularPerimetro(): double
+}
+
+abstract class FiguraConLados {
+  - numLados: int
+  + FiguraConLados(numLados: int)
+  + calcularArea(): double
+  + calcularPerimetro(): double
+}
+
+class Triangulo {
+  - lado1: double
+  - lado2: double
+  - lado3: double
+  + Triangulo(lado1: double, lado2: double, lado3: double)
+  + calcularArea(): double
+  + calcularPerimetro(): double
+}
+
+class Cuadrado {
+  - lado: double
+  + Cuadrado(lado: double)
+  + calcularArea(): double
+  + calcularPerimetro(): double
+}
+
+class Pentagono {
+  - lado: double
+  + Pentagono(lado: double)
+  + calcularArea(): double
+  + calcularPerimetro(): double
+}
+
+FiguraGeometrica <|.. FiguraConLados
+FiguraConLados <|-- Triangulo
+FiguraConLados <|-- Cuadrado
+FiguraConLados <|-- Pentagono
+@enduml
